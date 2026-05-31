@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding-bottom: 40px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    margin-left: 20px;
+}
+
+/* COMMON WIDTH CONTAINER */
+.accounts-per-page-wrapper,
+.pagination-wrapper,
+.players-table,
+.create-form {
+    width: 66vw;
+    max-width: 1100px;
+}
+
+/* table */
+.players-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    table-layout: auto;
+    min-width: 800px;
+}
+
+/* cells */
+.header-cell,
+.cell {
+    border: 1px solid black;
+    padding: 6px;
+
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.players-table td,
+.players-table th {
+    white-space: nowrap;
+}
+
+/* ACTION COLUMNS */
+.players-table th:nth-last-child(1),
+.players-table td:nth-last-child(1),
+.players-table th:nth-last-child(2),
+.players-table td:nth-last-child(2) {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* prevent edit inputs breaking layout */
+.players-table td input,
+.players-table td select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.players-table td {
+    overflow: hidden;
+}
+
+/* BUTTONS */
+button {
+    background-color: white;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.active-pagination-button {
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* PAGINATION */
+.pagination-wrapper {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pagination-buttons button {
+    margin: 2px;
+}
+
+/* DROPDOWN */
+.accounts-per-page-wrapper {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* CREATE FORM */
+.create-form {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    max-width: 500px;
+    min-width: 280px;
+}
+
+.create-field {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.create-field label {
+    width: 120px;
+}
+
+/* inputs */
+.create-field input,
+.create-field select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* create button */
+.create-button {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    background-color: blue;
+
+    display: block;
+    margin: 10px auto 0;
+    padding: 6px 20px;
+}
+
+/* effects */
+.highlight-created {
+    background-color: #fff3a0;
+    transition: background-color 2s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .players-table,
+    .pagination-wrapper,
+    .accounts-per-page-wrapper,
+    .create-form {
+        width: 95vw;
+        min-width: unset;
+    }
+
+    .players-table {
+        min-width: unset;
+    }
+
+    .create-field {
+        grid-template-columns: 1fr;
+    }
+}
